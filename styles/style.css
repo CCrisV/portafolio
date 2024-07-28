@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap'); /* Se importa la fuente del título */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{ /* declarar variables */
+     --color-primario: #000000; /* Las variables se declaran utilizando -- */
+     --color-secundario: #F6F6F6;
+     --color-terciario: #22D4FD;
+     --color-hover: #272727;
+
+     --fuente-montserrat:"Montserrat", sans-serif;
+     --fuente-krona:"Krona One", sans-serif;
+}
+
+* { /* "*" se utiliza para hacer un cambio universal */
+    padding: 0;
+    margin: 0;
+} 
+
+.header_nav{
+    display: flex;
+    padding: 2% 10% 0%;
+    gap: 80px;
+}
+.header_nav_link{
+    font-size: 1.5rem; /* Se va a cambiar de 24 a 1.5rem  1rem = 16px */
+    color: var(--color-terciario); /* Para llamar las varibles nombradas se utiliza Var */
+    font-family: var(--fuente-montserrat);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+body{
+    background-color: var(--color-primario); /* se utiliza # para colo car colores en hecadecimal, o se pueden nombrar Ej. black white ... */
+    color: var(--color-secundario) ;
+    /* height: 100vh; // 100% del body sea de la página */ 
+    box-sizing: border-box; /* El box sizing se utiliza para que los elementos no se salgan del padding */ 
+}
+
+.titulingo{
+    color: var(--color-terciario);
+}
+
+.presentacion{   /* se defginió la clase .presentación para indicar el main del body, utilizar la propiedad flex */ 
+    display: flex;
+    align-items: center;
+    margin: 5% 10%;
+    gap: 100px;
+    justify-content: space-between;
+}
+
+
+.presentacion_ContenidoTexto{ /* Se definiió la clase para definir una sección de solo texto */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 50%; /*antes> width: 615px;    Se asignó un ancho a los botones */
+}
+
+.presentacion_ContenidoTexto_titulo{
+    font-size: 2.125rem;
+    font-family: var(--fuente-krona);
+}
+.presentacion_ContenidoTexto_parrafo{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+    font-weight: 400;
+
+}
+.presentacion_ContenidoTexto_botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* se utiliza para alinear la linea de centro en posición vertical */
+    gap: 32px;
+
+}
+.presentacion_ContenidoTexto_botones_btn{
+    display: flex; /* Se conviertieron los botones en un container */
+    width: 50%; /*antes> width: 378px;    Se asignó un ancho a los botones */
+    text-align: center; /* como se conviertió en un container flex ya no se usa */
+    justify-content: center; /* cuando se tiene container flex se puede juestificar(eje horizontal) */
+    gap: 10px; /*espacio entre los obejtos del container*/
+    padding: 21.5px 0px;  /* se agrega padding en dos valores primero es el vertical y segundo simepre horizontal */
+    border-radius: 8px; /*radio de las puntas de los botones */
+    font-family: "Montserrat", sans-serif; /*se asgina la fuente*/
+    font-size: 1.5rem;    /* tamaño de la fuente*/
+    font-weight: 600; /* grosor del texto */
+    text-decoration: none;  /* se le quita todas las decoraciones al texto para que se quite el subrayado de link */
+    color:var(--color-secundario);  /* color del texto */
+    border: var(--color-terciario) solid 2px; /*configuración del borde */
+}
+.presentacion_ContenidoTexto_botones_btn:hover{ /* la función hover modifica la clase cuando los toca el mouse */
+    color: var(--color-terciario);
+    background-color: var(--color-hover);
+}
+.presentacion_ContenidoTexto_botones_Titulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion_imagen{
+    width: 50%; /* Se modificó apra que sea siempre el ancho el 50 %  del elemento padre(Body) */ 
+}
+.footer{
+    color: black;
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 24px;
+    text-align: center;
+    background-color: var(--color-terciario);
+
+}
+
+@media (max-width:1200px){
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .presentacion_imagen{
+        width: auto;
+    }
+    .header_nav{
+        padding: 10%;
+        justify-content: center;
+    }
+    .presentacion_ContenidoTexto{
+        width: auto;
+    }
+
+}
